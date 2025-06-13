@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AM IT Innovatives & Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/splash.css') }}">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation" id="bgAnimation"></div>
+    
+    <!-- Particle Animation -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Splash Content -->
+    <div class="splash-container">
+        <!-- Animated Logo -->
+        <div class="logo-container">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="logo-icon">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+        </div>
+        
+        <!-- Company Name -->
+        <div class="logo-text">
+            <h1 class="company-name">
+                <div class="am-part">
+                    <span class="name-part a-letter">A</span>
+                    <span class="name-part m-letter">M</span>
+                </div>
+                <div>
+                    <span class="name-part it-part">IT</span>
+                    <span class="name-part innovatives-part">INNOVATIVES</span>
+                    <span class="ampersand-part">&</span>
+                    <span class="name-part solutions-part">SOLUTIONS</span>
+                </div>
+            </h1>
+            <p class="tagline">Where Technology Meets Innovation</p>
+        </div>
+        
+        <!-- Loading Bar -->
+        <div class="loading">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/splash.js') }}"></script>
+</body>
+</html>

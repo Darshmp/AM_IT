@@ -1,0 +1,84 @@
+{% extends "case_study.html" %}
+
+{% block extra_css %}
+<style>
+    .solution-features {
+        background: rgba(131, 56, 236, 0.05);
+        padding: 30px;
+        border-radius: 8px;
+        margin: 30px 0;
+    }
+    
+    .security-badge {
+        display: inline-block;
+        background: var(--accent);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .integration-logos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 30px 0;
+        justify-content: center;
+    }
+    
+    .integration-logo {
+        width: 80px;
+        height: 80px;
+        background: white;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .integration-logo i {
+        font-size: 2.5rem;
+        color: var(--primary);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+
+<div class="container">
+    <section class="case-study-section">
+        <h2>Security Features</h2>
+        <div style="margin-top: 20px;">
+            <span class="security-badge">Multi-Factor Authentication</span>
+            <span class="security-badge">Role-Based Access Control</span>
+            <span class="security-badge">Just-In-Time Provisioning</span>
+            <span class="security-badge">Privilege Escalation Monitoring</span>
+            <span class="security-badge">Comprehensive Audit Trails</span>
+        </div>
+    </section>
+    
+    <section class="case-study-section">
+        <h2>System Integrations</h2>
+        <p>The solution was integrated with the client's existing infrastructure:</p>
+        
+        <div class="integration-logos">
+            <div class="integration-logo">
+                <i class="fab fa-windows"></i>
+            </div>
+            <div class="integration-logo">
+                <i class="fas fa-user-shield"></i>
+            </div>
+            <div class="integration-logo">
+                <i class="fas fa-database"></i>
+            </div>
+            <div class="integration-logo">
+                <i class="fas fa-cloud"></i>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

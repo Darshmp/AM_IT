@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Consultation | AM IT Innovatives</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reuse the same root variables and base styles from index.html */
+        :root {
+            --primary: #0A2463;
+            --secondary: #3A86FF;
+            --accent: #8338EC;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --gray: #6C757D;
+            --success: #28A745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .consultation-hero {
+            background: linear-gradient(135deg, #0A2463 0%, #3A86FF 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        
+        .consultation-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .consultation-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .consultation-form {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin: -30px auto 80px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.2);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2a75e6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(58, 134, 255, 0.3);
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .benefit-icon {
+            font-size: 40px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .consultation-hero {
+                padding: 80px 0 40px;
+            }
+            
+            .consultation-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .consultation-form {
+                padding: 30px;
+                margin: -20px auto 60px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .consultation-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Consultation Hero -->
+    <section class="consultation-hero">
+        <div class="container">
+            <h1>Free IT Consultation</h1>
+            <p>Let's discuss your business needs and how our technology solutions can help you achieve your goals.</p>
+        </div>
+    </section>
+    
+    <!-- Consultation Form -->
+    <div class="container">
+        <form class="consultation-form" action="/submit-consultation" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company" class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <label for="service">Service of Interest</label>
+                <select id="service" name="service" class="form-control">
+                    <option value="">Select a service</option>
+                    <option value="custom-software">Custom Software Development</option>
+                    <option value="cloud">Cloud Infrastructure & Migration</option>
+                    <option value="cybersecurity">Cybersecurity Solutions</option>
+                    <option value="ai">AI & Automation Consulting</option>
+                    <option value="support">IT Support & Maintenance</option>
+                    <option value="analytics">Data Analytics & BI</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Tell us about your project</label>
+                <textarea id="message" name="message" class="form-control"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Request Consultation</button>
+        </form>
+        
+        <div class="benefits">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Quick Response</h3>
+                <p>We'll get back to you within 24 hours to schedule your consultation.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Expert Advice</h3>
+                <p>Get insights from our experienced IT professionals.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>No Obligation</h3>
+                <p>This consultation is completely free with no strings attached.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add any necessary JavaScript here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form validation could be added here
+        });
+    </script>
+</body>
+</html>

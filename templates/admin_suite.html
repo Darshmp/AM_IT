@@ -1,0 +1,138 @@
+{% extends "case_study.html" %}
+
+{% block extra_css %}
+<style>
+    .admin-features {
+        background: rgba(58, 134, 255, 0.05);
+        padding: 30px;
+        border-radius: 8px;
+        margin: 30px 0;
+    }
+    
+    .workflow-diagram {
+        width: 100%;
+        max-width: 800px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .workflow-step {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    
+    .workflow-step::after {
+        content: '';
+        position: absolute;
+        left: 24px;
+        top: 40px;
+        height: calc(100% - 40px);
+        width: 2px;
+        background: var(--accent);
+    }
+    
+    .workflow-step:last-child::after {
+        display: none;
+    }
+    
+    .step-number {
+        width: 50px;
+        height: 50px;
+        background: var(--accent);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+    
+    .step-content {
+        flex-grow: 1;
+    }
+    
+    .integration-badge {
+        display: inline-block;
+        background: var(--primary);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    a{
+        align:right;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+
+<div class="container">
+    <section class="case-study-section">
+        <h2>Workflow Automation</h2>
+        <p>The system automated complex approval processes across departments:</p>
+        
+        <div class="workflow-diagram">
+            <div class="workflow-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Document Submission</h3>
+                    <p>Employees submit documents through the portal with required metadata</p>
+                </div>
+            </div>
+            <div class="workflow-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Automated Routing</h3>
+                    <p>System routes document to appropriate approvers based on type and department</p>
+                </div>
+            </div>
+            <div class="workflow-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Approval Process</h3>
+                    <p>Approvers receive notifications and can approve/reject with comments</p>
+                </div>
+            </div>
+            <div class="workflow-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Final Processing</h3>
+                    <p>Approved documents are automatically filed and indexed in the system</p>
+                </div>
+            </div>
+            <div class="workflow-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Notification</h3>
+                    <p>Submitter receives notification of final status and next steps</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="case-study-section">
+        <h2>System Integrations</h2>
+        <p>The solution was integrated with the client's existing enterprise systems:</p>
+        
+        <div style="margin-top: 20px;">
+            <span class="integration-badge">SAP ERP</span>
+            <span class="integration-badge">Microsoft SharePoint</span>
+            <span class="integration-badge">Workday HRIS</span>
+            <span class="integration-badge">Active Directory</span>
+            <span class="integration-badge">Microsoft Teams</span>
+        </div>
+    </section>
+     
+</div>
+{% endblock %}

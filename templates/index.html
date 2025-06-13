@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AM IT Innovative Solutions | IT Freelance Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A2463;
+            --secondary: #3A86FF;
+            --accent: #8338EC;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --gray: #6C757D;
+            --success: #28A745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2a75e6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(58, 134, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background-color: #7328d8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(131, 56, 236, 0.3);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            margin-bottom: 0;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .logo i {
+            font-size: 28px;
+            color: var(--accent);
+            margin-right: 10px;
+        }
+        
+        .mobile-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    transition: all 0.3s ease;
+}
+
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+    
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0A2463 0%, #3A86FF 100%);
+            color: white;
+            padding: 160px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .hero-buttons .btn {
+            font-size: 1rem;
+            padding: 15px 30px;
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            max-width: 600px;
+            z-index: 1;
+            opacity: 0.8;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 30px;
+            text-align: center;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Why Choose Us */
+        .why-us {
+            padding: 100px 0;
+            background-color: #f0f7ff;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background: #e9ecef;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--accent);
+        }
+        
+        .portfolio-info {
+            padding: 20px;
+            background: white;
+        }
+        
+        .portfolio-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .portfolio-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+         .portfolio-item {
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    
+    .portfolio-item.visible {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    .portfolio-image {
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .portfolio-image i {
+        font-size: 4rem;
+        color: rgba(255,255,255,0.9);
+        transition: all 0.3s ease;
+    }
+    
+    .portfolio-item:hover .portfolio-image i {
+        transform: scale(1.1) rotate(5deg);
+    }
+    
+    .portfolio-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 15px 0;
+        font-size: 0.9rem;
+    }
+    
+    .portfolio-stats span {
+        background: rgba(58, 134, 255, 0.1);
+        padding: 5px 10px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .portfolio-stats i {
+        color: var(--accent);
+    }
+    
+    .portfolio-link {
+        color: var(--secondary);
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+        margin-top: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .portfolio-link:hover {
+        color: var(--accent);
+        transform: translateX(5px);
+    }
+    
+    .filter-btn.active {
+        background: var(--secondary);
+        color: white;
+    }
+        /* Process Section */
+        .process {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            right: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+            z-index: 1;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(131, 56, 236, 0.3);
+        }
+        
+        .step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info i {
+            color: var(--accent);
+            margin-right: 10px;
+            min-width: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        .service-card {
+    transition: all 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Add this to make sure the highlighted card stays on top */
+.service-card:hover, 
+.service-card[style*="box-shadow"] {
+    z-index: 10;
+    position: relative;
+}
+        
+        /* Special styles for desktop mode on mobile */
+@media (min-width: 768px) and (max-device-width: 1024px) and (orientation: portrait),
+       (min-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    /* Reset horizontal scrolling behavior */
+    .services-grid,
+    .features,
+    .portfolio-grid,
+    .process-steps {
+        display: grid !important;
+        overflow-x: visible !important;
+        flex-direction: row !important;
+        scroll-snap-type: none !important;
+        -webkit-overflow-scrolling: auto !important;
+    }
+    
+
+
+    
+    /* Adjust grid layouts */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .process-steps {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .step {
+        flex: 0 0 calc(33.333% - 20px);
+        margin-bottom: 20px;
+    }
+    
+    /* Adjust hero section */
+    .hero-image {
+        opacity: 0.5 !important;
+        right: -100px !important;
+    }
+    
+    /* Adjust card sizes */
+    .service-card,
+    .feature,
+    .portfolio-item {
+        flex: 1 1 auto !important;
+        width: auto !important;
+    }
+    
+    /* Fix process steps line */
+    .process-steps::before {
+        display: none !important;
+    }
+}
+
+    /* Responsive Styles */
+    @media (max-width: 1200px) {
+        .hero h1 {
+            font-size: 3rem;
+        }
+    }
+
+    @media (max-width: 992px) {
+        /* Typography adjustments */
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+        }
+        
+        .hero-image {
+            opacity: 0.3;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+        }
+        
+        .portfolio-info h3 {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        /* Horizontal Scroll Container Enhancements */
+    .services-grid,
+    .features,
+    .portfolio-grid,
+    .process-steps {
+        position: relative;
+        scrollbar-width: none; /* Hide scrollbar for cleaner look */
+    }
+    
+    .services-grid::-webkit-scrollbar,
+    .features::-webkit-scrollbar,
+    .portfolio-grid::-webkit-scrollbar,
+    .process-steps::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Webkit browsers */
+    }
+    
+    /* Navigation Arrows */
+    .scroll-container {
+        position: relative;
+    }
+    
+    .scroll-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        cursor: pointer;
+        z-index: 10;
+        color: var(--primary);
+        font-size: 18px;
+        opacity: 0.9;
+        transition: all 0.3s ease;
+    }
+    
+    .scroll-arrow:hover {
+        opacity: 1;
+        background-color: var(--secondary);
+        color: white;
+    }
+    
+    .scroll-arrow.left {
+        left: 10px;
+    }
+    
+    .scroll-arrow.right {
+        right: 10px;
+    }
+    
+    /* Scroll Indicators */
+    .scroll-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+    }
+    
+    .scroll-indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .scroll-indicator.active {
+        background-color: var(--secondary);
+        transform: scale(1.2);
+    }
+
+        /* Base adjustments */
+        html {
+            font-size: 15px;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 2rem;
+        }
+        
+        h2 {
+            font-size: 1.7rem;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+        }
+        
+        p, li, a {
+            font-size: 0.95rem;
+        }
+        
+        /* Header/Navigation */
+        .navbar {
+            position: relative;
+            padding: 15px 0;
+        }
+        
+        .nav-links {
+            position: fixed;
+            top: 65px;
+            right: 0;
+            width: 40%;
+            background: white;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            transform: translateY(-150%);
+            transition: transform 0.3s ease;
+            z-index: 999;
+        }
+        
+        .nav-links.active {
+            transform: translateY(0);
+        }
+        
+        .nav-links li {
+            margin: 10px 0;
+        }
+        
+        .mobile-menu {
+            display: block;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 80px;
+        }
+        
+        .hero h1 {
+            font-size: 2rem;
+        }
+        
+        .hero p {
+            font-size: 1rem;
+        }
+        
+        .hero-buttons .btn {
+            padding: 12px 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Horizontal Scroll Sections */
+        .services-grid, 
+        .features, 
+        .portfolio-grid, 
+        .process-steps {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding-bottom: 20px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .service-card, 
+        .feature, 
+        .portfolio-item, 
+        .step {
+            flex: 0 0 85%;
+            scroll-snap-align: start;
+        }
+        
+        /* Process Steps */
+        .process-steps::before {
+            display: none;
+        }
+        
+        .step {
+            flex: 0 0 80%;
+            margin-right: 0;
+        }
+        
+        /* Footer */
+        .footer-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        /* Section Titles */
+        .section-title h2 {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .scroll-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+        /* Typography adjustments */
+        html {
+            font-size: 14px;
+        }
+        
+        h1 {
+            font-size: 1.7rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 60px;
+        }
+        
+        .hero h1 {
+            font-size: 1.7rem;
+        }
+        
+        .hero p {
+            font-size: 0.95rem;
+        }
+        
+        .hero-buttons {
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        /* Horizontal Scroll Sections */
+        .service-card, 
+        .feature, 
+        .portfolio-item, 
+        .step {
+            flex: 0 0 90%;
+        }
+        
+        /* Footer */
+        .footer-column {
+            min-width: 160px;
+        }
+        
+        /* Section Titles */
+        .section-title h2 {
+            font-size: 1.6rem;
+        }
+    }
+
+    @media (max-width: 345px) {
+        .scroll-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    .scroll-indicator {
+        width: 8px;
+        height: 8px;
+    }
+        /* Base adjustments */
+        html {
+            font-size: 13px;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 1.3rem;
+        }
+        
+        h3 {
+            font-size: 1.1rem;
+        }
+        
+        p, li, a {
+            font-size: 0.85rem;
+        }
+        
+        /* Header */
+        .navbar {
+            padding: 10px 0;
+        }
+        
+        .logo h1 {
+            font-size: 1.1rem;
+        }
+        
+        .logo i {
+            font-size: 1.3rem;
+        }
+        
+        .mobile-menu {
+            font-size: 18px;
+        }
+        
+        .nav-links {
+            top: 60px;
+        }
+        
+        .nav-links li {
+            margin: 10px 0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 50px;
+        }
+        
+        .hero h1 {
+            font-size: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 0.9rem;
+        }
+        
+        .hero-buttons .btn {
+            padding: 10px 15px;
+            font-size: 0.8rem;
+        }
+        
+        /* Horizontal Scroll Sections */
+        .services-grid, 
+        .features, 
+        .portfolio-grid, 
+        .process-steps {
+            gap: 15px;
+        }
+        
+        .service-card, 
+        .feature, 
+        .portfolio-item, 
+        .step {
+            flex: 0 0 95%;
+            padding: 15px;
+        }
+        
+        .service-icon {
+            font-size: 2rem;
+        }
+        
+        .portfolio-image {
+            height: 120px;
+        }
+        
+        /* Process Steps */
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        .footer-content {
+            grid-template-columns: 1fr;
+        }
+        
+        .footer-column {
+            min-width: 100%;
+        }
+        
+        /* General spacing */
+        .section-title {
+            margin-bottom: 30px;
+        }
+        
+        .services, .why-us, .portfolio, .process, .cta {
+            padding: 50px 0;
+        }
+        
+        /* Section Titles */
+        .section-title h2 {
+            font-size: 1.4rem;
+        }
+    }
+
+    /* Floating Help Button Styles */
+.floating-help {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+}
+
+.help-button {
+  width: 60px;
+  height: 60px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(131, 56, 236, 0.3);
+  transition: all 0.3s ease;
+}
+
+.help-button:hover {
+  background: #7328d8;
+  transform: scale(1.1);
+}
+
+.help-options {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.floating-help.active .help-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.help-option {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: var(--dark);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.help-option:hover {
+  background: #f8f9fa;
+  color: var(--accent);
+}
+
+.help-option i {
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .floating-help {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .help-button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .help-options {
+    width: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .floating-help {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .help-button {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+  
+  .help-options {
+    width: 160px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Hide scroll arrows on desktop */
+@media (min-width: 769px) {
+    .scroll-arrow {
+        display: none !important;
+    }
+    .scroll-indicators {
+        display: none !important;
+    }
+}
+
+/* Keep arrows visible on mobile */
+@media (max-width: 768px) {
+    .scroll-arrow {
+        display: flex;
+    }
+    .scroll-indicators {
+        display: flex;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-laptop-code"></i>
+                    <h1>AM IT <span>Innovatives</span></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transformative IT Solutions for Modern Businesses</h1>
+                <p>Freelance Technology Expertise Tailored to Your Needs</p>
+                <div class="hero-buttons">
+                    <!-- <a href="#contact" class="btn btn-primary">Get Free Consultation</a> -->
+                    <a href="#services" class="btn btn-secondary">View Our Services</a>
+                    <a href="{{ url_for('consultation') }}" class="btn btn-primary">Get Free Consultation</a>
+                </div>
+            </div>
+
+           <div class="hero-image">
+    <div style="font-size: 10rem; color: rgba(255,255,255,0.1); text-align: center; transition: opacity 0.5s ease;">
+        <i class="fas fa-server"></i>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our IT Services</h2>
+                <p>Comprehensive solutions to drive your business forward</p>
+            </div>
+            <div class="services-grid">
+    <div class="service-card" id="custom-software">
+        <div class="service-icon">
+            <i class="fas fa-code"></i>
+        </div>
+        <h3>Custom Software Development</h3>
+        <p>Tailored applications designed to solve your unique business challenges and streamline operations.</p>
+    </div>
+    <div class="service-card" id="cloud-migration">
+        <div class="service-icon">
+            <i class="fas fa-cloud"></i>
+        </div>
+        <h3>Cloud Infrastructure & Migration</h3>
+        <p>Seamless transition to cloud platforms with optimized architecture for scalability and security.</p>
+    </div>
+    <div class="service-card" id="cybersecurity">
+        <div class="service-icon">
+            <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Cybersecurity Solutions</h3>
+        <p>Protect your digital assets with enterprise-grade security protocols and threat monitoring.</p>
+    </div>
+    <div class="service-card" id="ai-automation">
+        <div class="service-icon">
+            <i class="fas fa-robot"></i>
+        </div>
+        <h3>AI & Automation Consulting</h3>
+        <p>Implement intelligent solutions to automate processes and gain data-driven insights.</p>
+    </div>
+    <div class="service-card" id="it-support">
+        <div class="service-icon">
+            <i class="fas fa-headset"></i>
+        </div>
+        <h3>IT Support & Maintenance</h3>
+        <p>24/7 technical assistance and proactive maintenance to ensure your systems run smoothly.</p>
+    </div>
+    <div class="service-card" id="data-analytics">
+        <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Data Analytics & BI</h3>
+        <p>Transform raw data into actionable insights with powerful analytics and visualization tools.</p>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose AM IT Innovatives</h2>
+                <p>Where freelance agility meets enterprise capability</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Agile Freelance Teams</h3>
+                    <p>No overhead costs with flexible team scaling based on your project needs.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Enterprise-Grade Security</h3>
+                    <p>Industry-standard security protocols to protect your business data.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>24/7 Remote Support</h3>
+                    <p>Round-the-clock technical assistance whenever you need it.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation-First Approach</h3>
+                    <p>Future-ready solutions that keep you ahead of the competition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Portfolio</h2>
+            <p>Enterprise solutions that transformed businesses</p>
+        </div>
+        
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="admin">Administrative</button>
+            <button class="filter-btn" data-filter="hr">HR Systems</button>
+            <button class="filter-btn" data-filter="security">Security</button>
+            <button class="filter-btn" data-filter="custom">Custom Solutions</button>
+        </div>
+        
+        <div class="portfolio-grid">
+            <!-- Administrative Systems -->
+            <div class="portfolio-item" data-category="admin">
+                <div class="portfolio-image" style="background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="portfolio-badge">Administrative</div>
+                <div class="portfolio-info">
+                    <h3>Enterprise Administrative Suite</h3>
+                    <p>Comprehensive system integrating document management, workflow automation, and executive dashboards</p>
+                    <div class="portfolio-stats">
+                        <span><i class="fas fa-chart-line"></i> 75% process efficiency gain</span>
+                        <span><i class="fas fa-clock"></i> 30h/week saved</span>
+                    </div>
+                    <a href="{{ url_for('case_study', case_id='admin-suite') }}" class="portfolio-link">View Case Study →</a>
+                    
+                </div>
+            </div>
+            
+            <!-- Attendance System -->
+            <div class="portfolio-item" data-category="hr">
+                <div class="portfolio-image" style="background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);">
+                    <i class="fas fa-fingerprint"></i>
+                </div>
+                <div class="portfolio-badge">HR Tech</div>
+                <div class="portfolio-info">
+                    <h3>Biometric Attendance System</h3>
+                    <p>Multi-modal system with facial recognition, fingerprint scanning, and mobile check-in capabilities</p>
+                    <div class="portfolio-stats">
+                        <span><i class="fas fa-user-shield"></i> 99.7% accuracy</span>
+                        <span><i class="fas fa-money-bill-wave"></i> 40% payroll error reduction</span>
+                    </div>
+                   <a href="{{ url_for('case_study', case_id='attendance-system') }}" class="portfolio-link">View Case Study →</a>
+                </div>
+            </div>
+            
+            <!-- User Access Management -->
+            <div class="portfolio-item" data-category="security">
+                <div class="portfolio-image" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                    <i class="fas fa-user-lock"></i>
+                </div>
+                <div class="portfolio-badge">Security</div>
+                <div class="portfolio-info">
+                    <h3>Role-Based Access Control</h3>
+                    <p>Enterprise-grade UAM with multi-factor authentication and privilege escalation monitoring</p>
+                    <div class="portfolio-stats">
+                        <span><i class="fas fa-shield-alt"></i> Zero breaches</span>
+                        <span><i class="fas fa-tachometer-alt"></i> 60% faster provisioning</span>
+                    </div>
+                    <a href="{{ url_for('case_study', case_id='user-access-management') }}" class="portfolio-link">View Case Study →</a>
+                </div>
+            </div>
+            
+            <!-- Additional Systems -->
+            <div class="portfolio-item" data-category="admin">
+                <div class="portfolio-image" style="background: linear-gradient(135deg, #f46b45 0%, #eea849 100%);">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                </div>
+                <div class="portfolio-badge">Administrative</div>
+                <div class="portfolio-info">
+                    <h3>Automated Billing System</h3>
+                    <p>AI-powered invoicing with contract lifecycle management and payment tracking</p>
+                    <div class="portfolio-stats">
+                        <span><i class="fas fa-robot"></i> 90% auto-processing</span>
+                        <span><i class="fas fa-calendar-check"></i> On-time payments ↑45%</span>
+                    </div>
+                    <a href="{{ url_for('case_study', case_id='billing-system') }}" class="portfolio-link">View Case Study →</a>
+                    
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="hr">
+                <div class="portfolio-image" style="background: linear-gradient(135deg, #a770ef 0%, #cf8bf3 50%, #fdb99b 100%);">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="portfolio-badge">HR Systems</div>
+                <div class="portfolio-info">
+                    <h3>Leave Management System</h3>
+                    <p>Integrated platform with policy engine, manager approvals, and accrual calculations</p>
+                    <div class="portfolio-stats">
+                        <span><i class="fas fa-exchange-alt"></i> 2-way calendar sync</span>
+                        <span><i class="fas fa-clipboard-check"></i> 80% faster approvals</span>
+                    </div>
+                <a href="{{ url_for('case_study', case_id='leave-management') }}" class="portfolio-link">View Case Study →</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item" data-category="custom">
+                <div class="portfolio-image" style="background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="portfolio-badge">Custom Solution</div>
+                <div class="portfolio-info">
+                    <h3>Client Portal System</h3>
+                    <p>White-labeled portal with document sharing, messaging, and service tracking</p>
+                    <div class="portfolio-stats">
+                        <span><i class="fas fa-users"></i> 500+ active users</span>
+                        <span><i class="fas fa-comments"></i> 70% fewer support tickets</span>
+                    </div>
+                    <a href="{{ url_for('case_study', case_id='client-portal') }}" class="portfolio-link">View Case Study →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Development Process</h2>
+                <p>Transparent and efficient workflow for project success</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Discovery</h3>
+                    <p>Understanding your business goals and requirements</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Proposal</h3>
+                    <p>Detailed solution design with timeline and budget</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Development</h3>
+                    <p>Agile implementation with regular progress updates</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>QA Testing</h3>
+                    <p>Rigorous testing to ensure quality and performance</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Launch</h3>
+                    <p>Seamless deployment and transition to production</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Support</h3>
+                    <p>Ongoing maintenance and optimization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Let's discuss how our innovative IT solutions can help you achieve your business objectives and stay ahead of the competition.</p>
+            <div class="cta-buttons">
+                <!-- <a href="#contact" class="btn btn-accent">Start Your Project</a> -->
+                 <a href="{{ url_for('start_project') }}" class="btn btn-accent">Start Your Project</a>
+                <a href="#contact" class="btn btn-secondary">Download Capabilities Deck</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>AM IT Innovatives</h3>
+                    </div>
+                    <p>Providing innovative IT solutions and services to businesses worldwide. Where freelance agility meets enterprise capability.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+    <li><a href="#custom-software">Custom Software Development</a></li>
+    <li><a href="#cloud-migration">Cloud Infrastructure & Migration</a></li>
+    <li><a href="#cybersecurity">Cybersecurity Solutions</a></li>
+    <li><a href="#ai-automation">AI & Automation Consulting</a></li>
+    <li><a href="#it-support">IT Support & Maintenance</a></li>
+    <li><a href="#data-analytics">Data Analytics & BI</a></li>
+</ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> <span>123 Tech Street, Innovation City</span></li>
+                        <li><i class="fas fa-phone"></i> <span>+1 (555) 123-4567</span></li>
+                        <li><i class="fas fa-envelope"></i> <span>contact@am-it-innovatives.com</span></li>
+                        <li><i class="fas fa-clock"></i> <span>Mon-Fri: 9AM - 6PM</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 AM IT Innovative Solutions and Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+<!-- Floating Help Button -->
+<div class="floating-help">
+  <div class="help-button">
+    <i class="fas fa-headset"></i>
+  </div>
+  <div class="help-options">
+    <a href="#contact" class="help-option"><i class="fas fa-envelope"></i> Email Us</a>
+    <a href="tel:+15551234567" class="help-option"><i class="fas fa-phone"></i> Call Support</a>
+    <a href="#" class="help-option"><i class="fas fa-comment-dots"></i> Live Chat</a>
+  </div>
+</div>
+<script>
+    function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+}
+    // Enhanced Portfolio Filtering with Animations
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = this.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking a link (for single page navigation)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+        
+        // Initial animation
+        setTimeout(() => {
+            portfolioItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, 150 * index);
+            });
+        }, 500);
+        
+        // Filter functionality
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.dataset.filter;
+                
+                // Filter items with animation
+                portfolioItems.forEach(item => {
+                    item.classList.remove('visible');
+                    
+                    setTimeout(() => {
+                        if (filter === 'all' || item.dataset.category === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => item.classList.add('visible'), 50);
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }, 300);
+                });
+            });
+        });
+
+        // Initialize horizontal scrolling
+        setupHorizontalScrolling();
+    });
+    
+    // Enhanced Horizontal Scrolling with Navigation
+   function setupHorizontalScrolling() {
+    // Only initialize if on mobile view (screen width <= 768px)
+    if (window.innerWidth > 768) return;
+    
+    const containers = [
+        document.querySelector('.services-grid'),
+        document.querySelector('.features'),
+        document.querySelector('.portfolio-grid'),
+        document.querySelector('.process-steps')
+    ];
+    
+    containers.forEach(container => {
+        if (!container) return;
+        
+        // Create navigation elements
+        const wrapper = document.createElement('div');
+        wrapper.className = 'scroll-container';
+        container.parentNode.insertBefore(wrapper, container);
+        wrapper.appendChild(container);
+        
+        // Add arrows
+        const leftArrow = document.createElement('div');
+        leftArrow.className = 'scroll-arrow left';
+        leftArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        wrapper.appendChild(leftArrow);
+        
+        const rightArrow = document.createElement('div');
+        rightArrow.className = 'scroll-arrow right';
+        rightArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        wrapper.appendChild(rightArrow);
+            
+            // Add indicators
+            const items = container.querySelectorAll('.service-card, .feature, .portfolio-item, .step');
+            if (items.length > 1) {
+                const indicators = document.createElement('div');
+                indicators.className = 'scroll-indicators';
+                wrapper.appendChild(indicators);
+                
+                items.forEach((_, index) => {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'scroll-indicator';
+                    if (index === 0) indicator.classList.add('active');
+                    indicators.appendChild(indicator);
+                });
+                
+                // Update indicators on scroll
+                container.addEventListener('scroll', () => {
+                    const scrollPos = container.scrollLeft;
+                    const itemWidth = items[0].offsetWidth + parseInt(window.getComputedStyle(container).gap);
+                    const activeIndex = Math.round(scrollPos / itemWidth);
+                    
+                    document.querySelectorAll('.scroll-indicator').forEach((ind, idx) => {
+                        ind.classList.toggle('active', idx === activeIndex);
+                    });
+                });
+            }
+            
+            // Arrow functionality
+            leftArrow.addEventListener('click', () => {
+                container.scrollBy({
+                    left: -container.offsetWidth * 0.8,
+                    behavior: 'smooth'
+                });
+            });
+            
+            rightArrow.addEventListener('click', () => {
+                container.scrollBy({
+                    left: container.offsetWidth * 0.8,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Indicator click functionality
+            if (items.length > 1) {
+                document.querySelectorAll('.scroll-indicator').forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => {
+                        const itemWidth = items[0].offsetWidth + parseInt(window.getComputedStyle(container).gap);
+                        container.scrollTo({
+                            left: index * itemWidth,
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+            }
+        });
+    }
+
+    
+window.addEventListener('resize', function() {
+    // Remove all existing scroll containers if we're now in desktop view
+    if (window.innerWidth > 768) {
+        document.querySelectorAll('.scroll-container').forEach(container => {
+            // Move the original content back to its parent
+            const originalContent = container.querySelector('.services-grid, .features, .portfolio-grid, .process-steps');
+            if (originalContent) {
+                container.parentNode.insertBefore(originalContent, container);
+                container.remove();
+            }
+        });
+    } else {
+        // If we're in mobile view, reinitialize the scrolling
+        setupHorizontalScrolling();
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Floating Help Button Toggle
+    const floatingHelp = document.querySelector('.floating-help');
+    const helpButton = document.querySelector('.help-button');
+
+    if (helpButton) {
+      helpButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        floatingHelp.classList.toggle('active');
+      });
+    }
+
+    // Close when clicking outside
+    document.addEventListener('click', function() {
+      if (floatingHelp) {
+        floatingHelp.classList.remove('active');
+      }
+    });
+
+    // Prevent closing when clicking inside help options
+    const helpOptions = document.querySelector('.help-options');
+    if (helpOptions) {
+      helpOptions.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    }
+});
+
+// Animated Hero Background
+document.addEventListener('DOMContentLoaded', function() {
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        const icons = [
+            'fa-server', 'fa-cloud', 'fa-database', 
+            'fa-code', 'fa-mobile-alt', 'fa-lock'
+        ];
+        let currentIcon = 0;
+        
+        function changeHeroIcon() {
+            const iconContainer = heroSection.querySelector('.hero-image div');
+            if (iconContainer) {
+                // Fade out
+                iconContainer.style.opacity = 0;
+                
+                setTimeout(() => {
+                    // Change icon
+                    currentIcon = (currentIcon + 1) % icons.length;
+                    iconContainer.innerHTML = `<i class="fas ${icons[currentIcon]}"></i>`;
+                    
+                    // Fade in
+                    iconContainer.style.opacity = 1;
+                }, 500);
+            }
+        }
+        
+        // Change icon every 3 seconds
+        setInterval(changeHeroIcon, 3000);
+    }
+});
+
+
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Highlight service card when scrolled to from footer
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    // Function to highlight a service card
+    function highlightServiceCard(id) {
+        // Remove highlight from all cards
+        serviceCards.forEach(card => {
+            card.style.boxShadow = 'none';
+            card.style.transform = 'none';
+        });
+        
+        // Highlight the selected card
+        const targetCard = document.getElementById(id);
+        if (targetCard) {
+            targetCard.style.boxShadow = '0 15px 30px rgba(58, 134, 255, 0.3)';
+            targetCard.style.transform = 'translateY(-10px)';
+            
+            // Remove highlight after 3 seconds
+            setTimeout(() => {
+                targetCard.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                targetCard.style.transform = 'translateY(0)';
+            }, 3000);
+        }
+    }
+    
+    // Check URL hash on page load
+    if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        if (['custom-software', 'cloud-migration', 'cybersecurity', 
+             'ai-automation', 'it-support', 'data-analytics'].includes(hash)) {
+            setTimeout(() => {
+                highlightServiceCard(hash);
+            }, 500);
+        }
+    }
+    
+    // Add click event listeners to footer links
+    document.querySelectorAll('.footer-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            
+            // Scroll to services section first
+            document.getElementById('services').scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Then scroll to the specific card
+            setTimeout(() => {
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                
+                // Highlight the card
+                highlightServiceCard(targetId);
+            }, 500);
+        });
+    });
+});
+</script>
+</body>
+</html>

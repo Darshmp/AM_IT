@@ -1,0 +1,127 @@
+{% extends "case_study.html" %}
+
+{% block extra_css %}
+<style>
+    .billing-features {
+        background: rgba(40, 167, 69, 0.05);
+        padding: 30px;
+        border-radius: 8px;
+        margin: 30px 0;
+    }
+    
+    .pricing-badge {
+        display: inline-block;
+        background: #28A745;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .process-flow {
+        width: 100%;
+        max-width: 800px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .process-step {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .process-icon {
+        width: 50px;
+        height: 50px;
+        background: #28A745;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+    
+    .process-content {
+        flex-grow: 1;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+
+<div class="container">
+    <section class="case-study-section">
+        <h2>Pricing Models Supported</h2>
+        <div style="margin-top: 20px;">
+            <span class="pricing-badge">Fixed Fee</span>
+            <span class="pricing-badge">Usage-Based</span>
+            <span class="pricing-badge">Tiered Pricing</span>
+            <span class="pricing-badge">Per User</span>
+            <span class="pricing-badge">Recurring Subscription</span>
+            <span class="pricing-badge">One-Time Charges</span>
+        </div>
+    </section>
+    
+    <section class="case-study-section">
+        <h2>Billing Process Flow</h2>
+        
+        <div class="process-flow">
+            <div class="process-step">
+                <div class="process-icon">
+                    <i class="fas fa-file-contract"></i>
+                </div>
+                <div class="process-content">
+                    <h3>Contract Terms</h3>
+                    <p>System loads pricing rules and terms from contract management system</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div class="process-content">
+                    <h3>Usage Data Collection</h3>
+                    <p>Aggregates usage metrics from various product systems</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="process-content">
+                    <h3>Invoice Calculation</h3>
+                    <p>Applies pricing rules to usage data to calculate charges</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-icon">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                </div>
+                <div class="process-content">
+                    <h3>Invoice Generation</h3>
+                    <p>Creates detailed invoices with line items and calculations</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-icon">
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+                <div class="process-content">
+                    <h3>Delivery</h3>
+                    <p>Sends invoices to customers via email and makes available in portal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

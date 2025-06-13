@@ -1,0 +1,144 @@
+{% extends "case_study.html" %}
+
+{% block extra_css %}
+<style>
+    .policy-features {
+        background: rgba(131, 56, 236, 0.05);
+        padding: 30px;
+        border-radius: 8px;
+        margin: 30px 0;
+    }
+    
+    .policy-badge {
+        display: inline-block;
+        background: var(--accent);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .approval-flow {
+        width: 100%;
+        max-width: 800px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .approval-step {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    
+    .approval-step::after {
+        content: '';
+        position: absolute;
+        left: 24px;
+        top: 40px;
+        height: calc(100% - 40px);
+        width: 2px;
+        background: var(--accent);
+    }
+    
+    .approval-step:last-child::after {
+        display: none;
+    }
+    
+    .approval-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--accent);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+    
+    .approval-content {
+        flex-grow: 1;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+
+<div class="container">
+    <section class="case-study-section">
+        <h2>Leave Policy Types</h2>
+        <div style="margin-top: 20px;">
+            <span class="policy-badge">Vacation</span>
+            <span class="policy-badge">Sick Leave</span>
+            <span class="policy-badge">Parental Leave</span>
+            <span class="policy-badge">Bereavement</span>
+            <span class="policy-badge">Jury Duty</span>
+            <span class="policy-badge">Military Leave</span>
+            <span class="policy-badge">Unpaid Leave</span>
+            <span class="policy-badge">Custom Policies</span>
+        </div>
+    </section>
+    
+    <section class="case-study-section">
+        <h2>Approval Workflow</h2>
+        
+        <div class="approval-flow">
+            <div class="approval-step">
+                <div class="approval-icon">
+                    <i class="fas fa-calendar-plus"></i>
+                </div>
+                <div class="approval-content">
+                    <h3>Leave Request</h3>
+                    <p>Employee submits leave request with dates and type</p>
+                </div>
+            </div>
+            <div class="approval-step">
+                <div class="approval-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="approval-content">
+                    <h3>Manager Notification</h3>
+                    <p>System notifies manager of pending request</p>
+                </div>
+            </div>
+            <div class="approval-step">
+                <div class="approval-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="approval-content">
+                    <h3>Approval/Rejection</h3>
+                    <p>Manager reviews and approves/rejects with comments</p>
+                </div>
+            </div>
+            <div class="approval-step">
+                <div class="approval-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <div class="approval-content">
+                    <h3>Calendar Sync</h3>
+                    <p>Approved leave is synced to team calendars</p>
+                </div>
+            </div>
+            <div class="approval-step">
+                <div class="approval-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div class="approval-content">
+                    <h3>Accrual Update</h3>
+                    <p>System updates employee's leave balances</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
