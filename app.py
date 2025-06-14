@@ -199,5 +199,10 @@ def submit_project():
     # For now, just redirect to a thank you page or back to home
     return redirect(url_for('home'))
 
+@app.route('/live-chat')
+def live_chat():
+    current_year = datetime.now().year
+    return render_template('live_chat.html', current_year=current_year)
+
 if __name__ == '__main__':
     app.run(debug=True)
