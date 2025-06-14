@@ -1,4 +1,4 @@
-# app.py (updated)
+# app.py
 from flask import Flask, make_response, render_template, request, redirect, url_for
 from datetime import datetime
 
