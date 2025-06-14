@@ -1262,6 +1262,47 @@
         display: flex;
     }
 }
+
+/* Mobile CTA Section Adjustments */
+@media (max-width: 768px) {
+    .cta {
+        padding: 50px 0; /* Reduced from 80px */
+    }
+    
+    .cta h2 {
+        font-size: 1.8rem; /* Reduced from 2.5rem */
+        margin-bottom: 15px; /* Reduced from 20px */
+    }
+    
+    .cta p {
+        font-size: 1rem; /* Reduced from 1.1rem */
+        margin-bottom: 20px; /* Reduced from 30px */
+    }
+    
+    .cta-buttons {
+        gap: 10px; /* Reduced from 20px */
+    }
+    
+    .cta-buttons .btn {
+        padding: 10px 20px; /* Reduced from 12px 28px */
+        font-size: 0.9rem; /* Reduced from 1rem */
+    }
+}
+
+@media (max-width: 576px) {
+    .cta {
+        padding: 40px 0; /* Further reduced for very small screens */
+    }
+    
+    .cta h2 {
+        font-size: 1.6rem; /* Further reduced */
+    }
+    
+    .cta-buttons {
+        flex-direction: column; /* Stack buttons vertically on very small screens */
+    }
+}
+
     </style>
 </head>
 <body>
@@ -1654,7 +1695,7 @@
   <div class="help-options">
     <a href="#contact" class="help-option"><i class="fas fa-envelope"></i> Email Us</a>
     <a href="tel:+15551234567" class="help-option"><i class="fas fa-phone"></i> Call Support</a>
-    <a href="#" class="help-option"><i class="fas fa-comment-dots"></i> Live Chat</a>
+    <a href="{{ url_for('live_chat') }}" class="help-option"><i class="fas fa-comment-dots"></i> Live Chat</a>
   </div>
 </div>
 <script>
@@ -1733,19 +1774,22 @@
     });
     
     // Enhanced Horizontal Scrolling with Navigation
-   function setupHorizontalScrolling() {
+   // Enhanced Horizontal Scrolling with Navigation
+function setupHorizontalScrolling() {
     // Only initialize if on mobile view (screen width <= 768px)
     if (window.innerWidth > 768) return;
     
     const containers = [
-        document.querySelector('.services-grid'),
-        document.querySelector('.features'),
-        document.querySelector('.portfolio-grid'),
-        document.querySelector('.process-steps')
+        { container: document.querySelector('.services-grid'), name: 'services' },
+        { container: document.querySelector('.features'), name: 'features' },
+        { container: document.querySelector('.portfolio-grid'), name: 'portfolio' },
+        { container: document.querySelector('.process-steps'), name: 'process' }
     ];
     
-    containers.forEach(container => {
-        if (!container) return;
+    containers.forEach(({container, name}) => {
+        if (!container || container.parentNode.classList.contains('scroll-container')) {
+            return; // Skip if already initialized
+        }
         
         // Create navigation elements
         const wrapper = document.createElement('div');
@@ -1753,44 +1797,46 @@
         container.parentNode.insertBefore(wrapper, container);
         wrapper.appendChild(container);
         
-        // Add arrows
-        const leftArrow = document.createElement('div');
-        leftArrow.className = 'scroll-arrow left';
-        leftArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
-        wrapper.appendChild(leftArrow);
+        // Add arrows if they don't exist
+        if (!wrapper.querySelector('.scroll-arrow')) {
+            const leftArrow = document.createElement('div');
+            leftArrow.className = 'scroll-arrow left';
+            leftArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
+            wrapper.appendChild(leftArrow);
+            
+            const rightArrow = document.createElement('div');
+            rightArrow.className = 'scroll-arrow right';
+            rightArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
+            wrapper.appendChild(rightArrow);
+        }
         
-        const rightArrow = document.createElement('div');
-        rightArrow.className = 'scroll-arrow right';
-        rightArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
-        wrapper.appendChild(rightArrow);
+        // Get all items in this container
+        const items = container.querySelectorAll('.service-card, .feature, .portfolio-item, .step');
+        
+        // Add indicators if they don't exist and there are multiple items
+        if (items.length > 1 && !wrapper.querySelector('.scroll-indicators')) {
+            const indicators = document.createElement('div');
+            indicators.className = 'scroll-indicators';
+            wrapper.appendChild(indicators);
             
-            // Add indicators
-            const items = container.querySelectorAll('.service-card, .feature, .portfolio-item, .step');
-            if (items.length > 1) {
-                const indicators = document.createElement('div');
-                indicators.className = 'scroll-indicators';
-                wrapper.appendChild(indicators);
-                
-                items.forEach((_, index) => {
-                    const indicator = document.createElement('div');
-                    indicator.className = 'scroll-indicator';
-                    if (index === 0) indicator.classList.add('active');
-                    indicators.appendChild(indicator);
-                });
-                
-                // Update indicators on scroll
-                container.addEventListener('scroll', () => {
-                    const scrollPos = container.scrollLeft;
-                    const itemWidth = items[0].offsetWidth + parseInt(window.getComputedStyle(container).gap);
-                    const activeIndex = Math.round(scrollPos / itemWidth);
-                    
-                    document.querySelectorAll('.scroll-indicator').forEach((ind, idx) => {
-                        ind.classList.toggle('active', idx === activeIndex);
-                    });
-                });
-            }
+            items.forEach((_, index) => {
+                const indicator = document.createElement('div');
+                indicator.className = 'scroll-indicator';
+                if (index === 0) indicator.classList.add('active');
+                indicators.appendChild(indicator);
+            });
             
-            // Arrow functionality
+            // Update indicators on scroll
+            container.addEventListener('scroll', () => {
+                updateScrollIndicators(container, items, indicators);
+            });
+        }
+        
+        // Arrow functionality
+        const leftArrow = wrapper.querySelector('.scroll-arrow.left');
+        const rightArrow = wrapper.querySelector('.scroll-arrow.right');
+        
+        if (leftArrow && rightArrow) {
             leftArrow.addEventListener('click', () => {
                 container.scrollBy({
                     left: -container.offsetWidth * 0.8,
@@ -1804,38 +1850,103 @@
                     behavior: 'smooth'
                 });
             });
-            
-            // Indicator click functionality
-            if (items.length > 1) {
-                document.querySelectorAll('.scroll-indicator').forEach((indicator, index) => {
-                    indicator.addEventListener('click', () => {
-                        const itemWidth = items[0].offsetWidth + parseInt(window.getComputedStyle(container).gap);
-                        container.scrollTo({
-                            left: index * itemWidth,
-                            behavior: 'smooth'
-                        });
+        }
+        
+        // Indicator click functionality
+        const indicators = wrapper.querySelector('.scroll-indicators');
+        if (indicators) {
+            indicators.querySelectorAll('.scroll-indicator').forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    const itemWidth = items[0].offsetWidth + parseInt(window.getComputedStyle(container).gap);
+                    container.scrollTo({
+                        left: index * itemWidth,
+                        behavior: 'smooth'
                     });
                 });
-            }
-        });
-    }
+            });
+        }
+    });
+}
 
+// Function to update scroll indicators
+function updateScrollIndicators(container, items, indicators) {
+    if (!indicators) return;
     
-window.addEventListener('resize', function() {
-    // Remove all existing scroll containers if we're now in desktop view
-    if (window.innerWidth > 768) {
-        document.querySelectorAll('.scroll-container').forEach(container => {
-            // Move the original content back to its parent
-            const originalContent = container.querySelector('.services-grid, .features, .portfolio-grid, .process-steps');
-            if (originalContent) {
-                container.parentNode.insertBefore(originalContent, container);
-                container.remove();
-            }
-        });
+    const scrollPos = container.scrollLeft;
+    const containerWidth = container.offsetWidth;
+    const itemWidth = items[0].offsetWidth + parseInt(window.getComputedStyle(container).gap);
+    const maxScroll = container.scrollWidth - containerWidth;
+    
+    // Calculate active index based on scroll position
+    let activeIndex;
+    if (scrollPos <= 0) {
+        activeIndex = 0;
+    } else if (scrollPos >= maxScroll) {
+        activeIndex = items.length - 1;
     } else {
-        // If we're in mobile view, reinitialize the scrolling
+        activeIndex = Math.round(scrollPos / itemWidth);
+    }
+    
+    // Update indicators
+    indicators.querySelectorAll('.scroll-indicator').forEach((ind, idx) => {
+        ind.classList.toggle('active', idx === activeIndex);
+    });
+}
+
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth <= 768) {
         setupHorizontalScrolling();
     }
+});
+
+// Handle resize events with debounce
+let resizeTimeout;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(function() {
+        if (window.innerWidth > 768) {
+            // Remove all scroll containers if we're now in desktop view
+            document.querySelectorAll('.scroll-container').forEach(container => {
+                const originalContent = container.querySelector('.services-grid, .features, .portfolio-grid, .process-steps');
+                if (originalContent) {
+                    container.parentNode.insertBefore(originalContent, container);
+                    container.remove();
+                }
+            });
+        } else {
+            // Reinitialize scrolling for mobile
+            setupHorizontalScrolling();
+            
+            // Update indicators for all containers
+            document.querySelectorAll('.scroll-container').forEach(wrapper => {
+                const container = wrapper.querySelector('.services-grid, .features, .portfolio-grid, .process-steps');
+                if (container) {
+                    const items = container.querySelectorAll('.service-card, .feature, .portfolio-item, .step');
+                    const indicators = wrapper.querySelector('.scroll-indicators');
+                    updateScrollIndicators(container, items, indicators);
+                }
+            });
+        }
+    }, 250);
+});
+
+// Update indicators when scrolling ends (for smoother UX)
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.services-grid, .features, .portfolio-grid, .process-steps').forEach(container => {
+        let scrollEndTimer;
+        container.addEventListener('scroll', function() {
+            clearTimeout(scrollEndTimer);
+            scrollEndTimer = setTimeout(() => {
+                const wrapper = container.closest('.scroll-container');
+                if (wrapper) {
+                    const items = container.querySelectorAll('.service-card, .feature, .portfolio-item, .step');
+                    const indicators = wrapper.querySelector('.scroll-indicators');
+                    updateScrollIndicators(container, items, indicators);
+                }
+            }, 100);
+        });
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
